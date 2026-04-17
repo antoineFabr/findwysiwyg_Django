@@ -5,4 +5,5 @@ app_name = 'blog'
 
 urlpatterns = [
     path('tinymce/', views.test_tinymce, name='tinymce'),
+    path('quilljs/', views.test_quilljs, name='quilljs')
 ]
