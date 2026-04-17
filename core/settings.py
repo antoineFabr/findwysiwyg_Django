@@ -132,10 +132,12 @@ TINYMCE_DEFAULT_CONFIG = {
 
     # 1. On s'assure que les boutons de couleur sont là
     'toolbar': 'undo redo | bold italic | forecolor backcolor | custom_button | code',
-
+    'promotion': False,
+    'branding': False,
     # --- RESTRICTION DES COULEURS ---
     # 2. On interdit à l'utilisateur de choisir ses propres couleurs hors palette
     'custom_colors': False,
+
 
     # 3. On définit notre palette stricte (Hexadécimal SANS le #, suivi du Label)
     'color_map': [
