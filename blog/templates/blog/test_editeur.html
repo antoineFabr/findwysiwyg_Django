@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ titre }}</title>
+    {{ form.media }}
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px; }
+        .nav { display: flex; gap: 10px; margin-bottom: 30px; padding-bottom: 20px; border-bottom: 2px solid #eee; }
+        .nav a { padding: 10px 15px; text-decoration: none; background: #0056b3; color: white; border-radius: 5px; font-weight: bold; }
+        .nav a:hover { background: #003d82; }
+        .editor-box { padding: 20px; background: #f9f9f9; border-radius: 8px; border: 1px solid #ddd; }
+    </style>
+</head>
+<body>
+
+    <div class="nav">
+        <a href="{% url 'blog:tinymce' %}">TinyMCE</a>
+    </div>
+
+    <h1>{{ titre }}</h1>
+
+    <div class="editor-box">
+        <form method="post">
+            {{ form.as_p }}
+        </form>
+    </div>
+
+</body>
+</html>
