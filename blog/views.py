@@ -7,3 +7,6 @@ def test_tinymce(request):
 
 def test_quilljs(request):
     return render(request, 'blog/test_editeur.html', {'form': forms.QuillJsForm(), 'titre': 'Test Quill.Js'})
+
+def test_froala(request):
+    return render(request, 'blog/test_editeur.html', {'form': forms.FroalaForm(), 'titre': 'Test froala'})

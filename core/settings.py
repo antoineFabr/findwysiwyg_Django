@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'blog',
     'tinymce',
-    'django_quill'
+    'django_quill',
+    'froala_editor'
 ]
 
 MIDDLEWARE = [
