@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 """
 
 from pathlib import Path
+import os
+from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -118,4 +120,33 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
+]
+
+TINYMCE_DEFAULT_CONFIG = {
+    'height': 500,
+    'language': 'fr_FR',
+    'plugins': 'advlist link image code',
+
+    # 1. On s'assure que les boutons de couleur sont là
+    'toolbar': 'undo redo | bold italic | forecolor backcolor | custom_button | code',
+
+    # --- RESTRICTION DES COULEURS ---
+    # 2. On interdit à l'utilisateur de choisir ses propres couleurs hors palette
+    'custom_colors': False,
+
+    # 3. On définit notre palette stricte (Hexadécimal SANS le #, suivi du Label)
+    'color_map': [
+        "0056b3", "Bleu Primaire (Thème)",
+        "f8f9fa", "Gris Clair (Fond)",
+        "343a40", "Texte Sombre",
+        "e3a129", "Orange Accentuation"
+    ],
+    # --------------------------------
+
+    'external_plugins': {
+        'custom_plugin': '/static/js/custom_plugin.js',
+    },
+}
